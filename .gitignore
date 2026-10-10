@@ -41,3 +41,6 @@ terraform.rc
 # Analytics reports & temporary logs
 reports/
 terraform/lambda/*.zip
+
+# Career & LinkedIn blueprints
+LINKEDIN_PROFILE.md
