@@ -1,0 +1,6 @@
+# Robots.txt for Ben Krack Portfolio
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://benkrack.com/sitemap.xml

@@ -1,0 +1,39 @@
+# AWS Deployment Configuration for Ben Krack Portfolio
+
+# AWS Region where S3 and static resources will be deployed
+aws_region = "us-east-1"
+
+# Domain name for the website
+domain_name = "benkrack.com"
+
+# S3 Website Hosting Bucket Name
+# If blank, it defaults to domain_name ("benkrack.com").
+# If "benkrack.com" is already in use by an existing bucket in your AWS account or another,
+# you can specify a unique name here (e.g. "benkrack-portfolio-static").
+bucket_name = "benkrack.com"
+
+# S3 Analytics Bucket Name
+# If blank, it defaults to "<bucket_name>-analytics" (e.g. "benkrack.com-analytics").
+analytics_bucket_name = ""
+
+# Enable S3 server access logging into the analytics bucket
+enable_access_logging = true
+
+# Deploy an automated Lambda function that parses logs and saves HTML & JSON visitor reports to S3
+enable_report_generator_lambda = true
+
+# EventBridge schedule to run the report generator (daily at 01:00 UTC)
+report_schedule_cron = "cron(0 1 * * ? *)"
+
+# Relative path from terraform/ to production build folder
+dist_dir = "../dist"
+
+# Set to true if you want to deploy a CloudFront distribution with HTTPS
+enable_cloudfront = false
+
+# If enable_cloudfront = true and you want to use your custom domain (benkrack.com) with SSL,
+# provide the ARN of an ACM certificate created in us-east-1:
+# acm_certificate_arn = "arn:aws:acm:us-east-1:123456789012:certificate/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+# CloudFront Price Class
+price_class = "PriceClass_100"
